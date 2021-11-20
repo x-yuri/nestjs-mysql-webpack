@@ -1,26 +1,11 @@
-### Sequelize sample
-
-### Installation
-
-`npm install`
-
-### Running
-
-This example requires docker or a local MySQL installation.  If using a local MySQL database, see `app.module.ts` for credentials, and make sure there are matching credentials in the database and the source code.
-
-#### Docker
-
-There is a `docker-compose.yml` file for starting Docker.
-
-`docker-compose up`
-
-After running the sample, you can stop the Docker container with
-
-`docker-compose down`
-
-### Run the sample
-
-Then, run Nest as usual:
-
-`npm run start`
-
+```
+$ docker-compose up -d
+$ docker-compose exec app npm i
+$ docker-compose exec app ./node_modules/.bin/nest start
+$ curl -sS localhost:3000/users
+[]
+$ curl -sS localhost:3000/users -d ''
+{"isActive":true,"id":1,"updatedAt":"2021-11-20T00:55:44.190Z","createdAt":"2021-11-20T00:55:44.190Z"}
+$ curl -sS localhost:3000/users
+[{"id":1,"firstName":null,"lastName":null,"isActive":true,"createdAt":"2021-11-20T00:55:44.000Z","updatedAt":"2021-11-20T00:55:44.000Z"}]
+```
