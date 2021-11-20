@@ -1,7 +1,8 @@
 ```
 $ docker-compose up -d
 $ docker-compose exec app npm i
-$ docker-compose exec app ./node_modules/.bin/nest start
+$ docker-compose exec app ./node_modules/.bin/nest build --webpack
+$ docker-compose exec app node dist/main.js
 $ curl -sS localhost:3000/users
 []
 $ curl -sS localhost:3000/users -d ''
